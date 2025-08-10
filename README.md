@@ -1,32 +1,37 @@
-P‑CryptoSuite
-
-<!-- NOTE: the CI badge below works only if .github/workflows/ci.yml exists -->
-
+# P‑CryptoSuite
 
 Open‑source cryptography suite with two Rust crates:
-	•	p_hash/ – P‑Hash‑512 (morphogenetic 512‑bit hash finalised with SHA‑512)
-	•	p_key/  – P‑Key (deterministic public‑key crypto built on the same SGA engine)
 
-Repository layout
+* **p\_hash/** – P‑Hash‑512 (morphogenetic 512‑bit hash finalised with SHA‑512)
+* **p\_key/**  – P‑Key (deterministic public‑key crypto built on the same SGA engine)
 
+## Repository layout
+
+```text
 P-CryptoSuite/
+├─ Cargo.toml            # workspace
 ├─ p_hash/
 │  ├─ Cargo.toml
 │  └─ src/
 │     └─ lib.rs
 └─ p_key/
-├─ Cargo.toml
-└─ src/
-└─ lib.rs
-Build & test (local)
+   ├─ Cargo.toml
+   └─ src/
+      └─ lib.rs
+```
 
+## Build & test (local)
+
+```bash
 cargo build --workspace --release
 cargo test  --workspace --release
+```
 
-Minimal usage
+## Minimal usage
 
-P‑Hash
+### P‑Hash
 
+```rust
 use p_hash::p_hash;
 
 fn main() {
@@ -34,9 +39,11 @@ fn main() {
     assert_eq!(digest_hex.len(), 128); // 512-bit (128 hex chars)
     println!("{}", digest_hex);
 }
+```
 
-P‑Key
+### P‑Key
 
+```rust
 use p_key::{generate_keypair, encrypt, decrypt};
 
 fn main() {
@@ -45,11 +52,12 @@ fn main() {
     let clear = decrypt(&pubk, &pkg);
     assert_eq!(clear, "hello world");
 }
+```
 
-Security & bug bounty
+## Security & bug bounty
 
-See SECURITY.md.
+See [SECURITY.md](./SECURITY.md).
 
-License
+## License
 
-Apache‑2.0 — see LICENSE.
+Apache‑2.0 — see [LICENSE](./LICENSE).
