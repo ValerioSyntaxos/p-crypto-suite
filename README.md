@@ -10,16 +10,14 @@ Open‑source cryptography suite with two Rust crates:
 Repository layout
 
 P-CryptoSuite/
-├─ Cargo.toml            # workspace
 ├─ p_hash/
 │  ├─ Cargo.toml
 │  └─ src/
 │     └─ lib.rs
 └─ p_key/
-   ├─ Cargo.toml
-   └─ src/
-      └─ lib.rs
-
+├─ Cargo.toml
+└─ src/
+└─ lib.rs
 Build & test (local)
 
 cargo build --workspace --release
