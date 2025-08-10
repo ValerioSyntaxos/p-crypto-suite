@@ -55,7 +55,7 @@ fn main() {
 ```
 
 ## Security & bug bounty
-
+- Active bounty → [P-Crypto Bug Bounty — Phase 1](https://github.com/ValerioSyntaxos/p-crypto-suite/issues/1)
 See [SECURITY.md](./SECURITY.md).
 
 ## License
