@@ -42,7 +42,9 @@ fn sga_engine(seed: u64, iterations: u64) -> Vec<u64> {
                 current += 1;
             } else {
                 while let Some(Reverse((comp, prom_ref))) = queue.peek() {
-                    if *comp != current { break; }
+                    if *comp != current {
+                        break;
+                    }
                     let prom = *prom_ref;
                     queue.pop();
                     let nxt = current
@@ -58,24 +60,46 @@ fn sga_engine(seed: u64, iterations: u64) -> Vec<u64> {
 }
 
 #[derive(Debug)]
-struct MorphogeneticSignature { delta: u64, nu: u64, phi: u64, rho: u64, omega: u64 }
+struct MorphogeneticSignature {
+    delta: u64,
+    nu: u64,
+    phi: u64,
+    rho: u64,
+    omega: u64,
+}
 
 fn calculate_signature(prom: &[u64]) -> MorphogeneticSignature {
     if prom.is_empty() {
-        return MorphogeneticSignature { delta: 0, nu: 0, phi: 0, rho: 0, omega: 0 };
+        return MorphogeneticSignature {
+            delta: 0,
+            nu: 0,
+            phi: 0,
+            rho: 0,
+            omega: 0,
+        };
     }
     let delta = prom.len() as u64;
     let nu = prom.iter().collect::<HashSet<_>>().len() as u64;
     let phi = *prom.iter().max().unwrap();
     let rho = phi - *prom.iter().min().unwrap();
     let omega = prom.iter().sum::<u64>() % 999_999_937;
-    MorphogeneticSignature { delta, nu, phi, rho, omega }
+    MorphogeneticSignature {
+        delta,
+        nu,
+        phi,
+        rho,
+        omega,
+    }
 }
 
 pub fn p_hash(data: &[u8]) -> String {
-    let mut input_primes: Vec<u64> =
-        data.iter().map(|b| PRIME_TABLE[(*b as usize) % PRIME_TABLE.len()]).collect();
-    if input_primes.is_empty() { input_primes.push(2); }
+    let mut input_primes: Vec<u64> = data
+        .iter()
+        .map(|b| PRIME_TABLE[(*b as usize) % PRIME_TABLE.len()])
+        .collect();
+    if input_primes.is_empty() {
+        input_primes.push(2);
+    }
 
     let salted: Vec<u64> = input_primes.iter().map(|p| p * GRAMMATICAL_SALT).collect();
 
@@ -98,8 +122,16 @@ pub fn p_hash(data: &[u8]) -> String {
     let sign = calculate_signature(&promoters);
     let final_string = format!(
         "{}:{},{},{},{},{}",
-        final_prom.iter().map(|p| p.to_string()).collect::<Vec<_>>().join(","),
-        sign.delta, sign.nu, sign.phi, sign.rho, sign.omega
+        final_prom
+            .iter()
+            .map(|p| p.to_string())
+            .collect::<Vec<_>>()
+            .join(","),
+        sign.delta,
+        sign.nu,
+        sign.phi,
+        sign.rho,
+        sign.omega
     );
 
     let mut h = Sha512::new();
