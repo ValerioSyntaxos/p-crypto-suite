@@ -1,0 +1,10 @@
+[package]
+name        = "p_hash"
+version     = "0.1.0"
+edition     = "2021"
+authors     = ["Valerio Antognelli <valerio@syntaxos.org>"]
+license     = "Apache-2.0"
+description = "P-Hash-512 core (Rust)."
+
+[dependencies]
+sha2 = "0.10"
