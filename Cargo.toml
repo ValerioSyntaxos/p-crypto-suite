@@ -1,0 +1,3 @@
+[workspace]
+members = ["p_hash", "p_key"]
+resolver = "2"
