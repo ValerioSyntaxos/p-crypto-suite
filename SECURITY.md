@@ -1,5 +1,10 @@
 # Security Policy & Bug Bounty Program
 
+> **🚨 Stato: PAUSATO (Aug 10, 2025).**  
+> Stiamo lavorando a una segnalazione critica in `p_key`. La *Phase 1* è temporaneamente sospesa.  
+> Non accettiamo nuove submission fino al rilascio di **v0.1.1**.  
+> Dettagli: https://github.com/ValerioSyntaxos/p-crypto-suite/issues/1
+> 
 Security is our top priority. We value the work of security researchers and believe open, respectful collaboration is the best way to keep algorithms safe over time. If you find an issue, we want reporting, reproduction, and fixing to be straightforward — with fair recognition and prompt payment.
 
 ---
