@@ -1,5 +1,7 @@
 # P‑CryptoSuite
-
+> **🚨 Bug bounty paused (Aug 10, 2025).**  
+> We are addressing a critical report in `p_key`. No new submissions will be accepted until **v0.1.1** is released.  
+> Details: https://github.com/ValerioSyntaxos/p-crypto-suite/issues/1
 Open‑source cryptography suite with two Rust crates:
 
 * **p\_hash/** – P‑Hash‑512 (morphogenetic 512‑bit hash finalised with SHA‑512)
