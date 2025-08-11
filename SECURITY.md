@@ -1,10 +1,9 @@
 # Security Policy & Bug Bounty Program
 
-> **🚨 Stato: PAUSATO (Aug 10, 2025).**  
-> Stiamo lavorando a una segnalazione critica in `p_key`. La *Phase 1* è temporaneamente sospesa.  
-> Non accettiamo nuove submission fino al rilascio di **v0.1.1**.  
-> Dettagli: https://github.com/ValerioSyntaxos/p-crypto-suite/issues/1
-> 
+> **🚨 Status: PAUSED (Aug 10, 2025).**  
+> We’re addressing a critical report in `p_key`. **Phase 1** is temporarily suspended.  
+> We are **not accepting new submissions** until **v0.1.1** is released.  
+> Details: https://github.com/ValerioSyntaxos/p-crypto-suite/issues/1
 Security is our top priority. We value the work of security researchers and believe open, respectful collaboration is the best way to keep algorithms safe over time. If you find an issue, we want reporting, reproduction, and fixing to be straightforward — with fair recognition and prompt payment.
 
 ---
@@ -42,6 +41,8 @@ We aim for an initial response within **48 hours** and will provide status updat
 * Vulnerabilities in modified or unofficial forks of the code.
 
 ### **Reward Structure (Phase 1)**
+
+**Temporary note:** Submissions sent **before Aug 10, 2025** will be handled case-by-case during the pause. **No new submissions** are accepted until v0.1.1.
 
 The final severity and payout amount are at the project’s discretion, depending on impact, exploitability, and report quality. The program may end early if the total budget is exhausted.
 
